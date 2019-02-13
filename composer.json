@@ -1,6 +1,7 @@
 {
     "require": {
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "gumlet/php-image-resize": "1.9.*"
     },
     "require-dev": {
         "lucatume/wp-browser": "*"
