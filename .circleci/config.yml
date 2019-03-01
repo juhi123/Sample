@@ -28,6 +28,13 @@ jobs:
       - run:
           name: Install PHP Extensions
           command: sudo docker-php-ext-install gd
+      - run:
+          name: Download Selenium
+          command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+      - run:
+          name: Start Selenium
+          command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
+          background: true
 
       # Download and cache dependencies
       - restore_cache:
@@ -45,9 +52,6 @@ jobs:
             - ./vendor
       - run: yarn install
 
-      - run:
-          name: Run Selenium In Docket
-          command: sudo docker run --net=host selenium/standalone-chrome
 
       # run tests with phpunit or codecept
       #- run: ./vendor/bin/phpunit
