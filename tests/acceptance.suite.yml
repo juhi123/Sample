@@ -11,8 +11,8 @@ modules:
         - WPWebDriver
     config:
         WPWebDriver:
-            port: 80
-            browser: 'chrome'
+            port: 4444
+            browser: chrome
             url: 'https://krupajnanda.wordpress.com'
             adminUsername: ''
             adminPassword: ''
