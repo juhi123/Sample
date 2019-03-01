@@ -49,11 +49,18 @@ jobs:
       - run: mkdir test-reports
       - run:
           name: Download Selenium
-          command: curl -O http://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
-      - run:
-          name: Start Selenium
-          command: java -jar selenium-server-standalone-3.141.59.jar -log test-reports/selenium.log
-          background: true
+          # command: curl -O http://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
+          # command: Xvfb :7055
+      - type: shell
+            name: Start Xvfb
+            command: |
+              wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar -O selenium-server.jar
+              Xvfb :7055
+            background: true
+      # - run:
+          # name: Start Selenium
+          # command: java -jar selenium-server-standalone-3.141.59.jar -log test-reports/selenium.log
+          # background: true
 
 
       # run tests with phpunit or codecept
