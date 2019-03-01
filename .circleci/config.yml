@@ -45,9 +45,9 @@ jobs:
             - ./vendor
       - run: yarn install
 
-      -run:
-        name: Run Selenium In Docket
-        command: sudo docker run --net=host selenium/standalone-chrome
+      - run:
+          name: Run Selenium In Docket
+          command: sudo docker run --net=host selenium/standalone-chrome
 
       # run tests with phpunit or codecept
       #- run: ./vendor/bin/phpunit
