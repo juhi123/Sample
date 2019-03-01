@@ -50,7 +50,12 @@ jobs:
       - run:
           name: Download Selenium
           command: curl -O http://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
+      - run:
+          name: Download Chrome Driver
           command: curl -O https://chromedriver.storage.googleapis.com/73.0.3683.20/chromedriver_linux64.zip
+
+      - run:
+          name: Extract Chrome Zip
           command: jar xf chromedriver_linux64.zip
 
       - run:
